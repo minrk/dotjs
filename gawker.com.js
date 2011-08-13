@@ -25,7 +25,24 @@ function iptxt(){
     }
 }
 
+function hidesidebar(){
+    // hide the sidebar
+    var d=document;
+    try{
+        if(!d.body) throw(0);
+        
+        sidebar = document.getElementById("rightcontainer");
+        
+        if (sidebar == null) throw(1);
+        
+        sidebar.style.visibility = "hidden";
+    } catch(e){
+        // noop
+    }
+}
 if (document.location.hash){
     // don't filter when entering from frontpage
     iptxt();
+}else{
+    hidesidebar();
 }
